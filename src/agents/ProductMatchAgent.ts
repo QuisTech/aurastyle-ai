@@ -109,7 +109,7 @@ export class ProductMatchAgent {
     const detailedProductInfo: Record<string, Product> = curatedProducts.reduce((acc, product) => {
       acc[product.id] = product;
       return acc;
-    }, {});
+    }, {} as Record<string, Product>);
 
     return {
       curatedProducts: curatedProducts,
