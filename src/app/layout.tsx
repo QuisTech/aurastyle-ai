@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/ui/navbar';
 import { Footer } from '@/components/ui/footer';
+import PageTransitionProvider from '@/components/PageTransitionProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
-          <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
+          <main className="flex-grow container mx-auto px-4 py-8">
+            <PageTransitionProvider>{children}</PageTransitionProvider>
+          </main>
           <Footer />
         </div>
       </body>
