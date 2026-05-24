@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '@/components/ui/navbar';
 import { Footer } from '@/components/ui/footer';
 import PageTransitionProvider from '@/components/PageTransitionProvider';
+import SceneController from '@/components/SceneController';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
+        <SceneController />
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow container mx-auto px-4 py-8">
